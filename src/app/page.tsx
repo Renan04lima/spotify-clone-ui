@@ -1,4 +1,4 @@
-import { Home as HomeIcon, Search, Library, ChevronRight, ChevronLeft, Play } from "lucide-react"
+import { Home as HomeIcon, Search, Library, ChevronRight, ChevronLeft, Play, Shuffle, SkipBack, SkipForward, Repeat, Mic2, LayoutList, Volume, Laptop2, Maximize2 } from "lucide-react"
 import Image from "next/image"
 
 export default function Home() {
@@ -55,7 +55,7 @@ export default function Home() {
               <Image src="/album.jpeg" width={104} height={104} alt="Capa do álbum Dos prédios - Veigh" />
               <strong>Dos prédios</strong>
 
-              <button className="w-12 h-12 flex items-center justify-center rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
+              <button className="w-12 h-12 flex items-center justify-center pl-1 rounded-full bg-green-400 text-black ml-auto mr-8 invisible group-hover:visible">
                 <Play />
               </button>
             </a>
@@ -73,7 +73,51 @@ export default function Home() {
           </div>
         </main>
       </div>
-      <footer className="bg-zinc-800 border-t border-zinc-700 p-6">footer</footer>
+      <footer className="bg-zinc-900 border-t border-zinc-700 px-6 py-4 flex items-center justify-between">
+        <div className="flex items-center gap-3">
+          <Image src="/album.jpeg" className="w-full" width={48} height={48} alt="Capa do álbum Dos prédios - Veigh" />
+          <div className="flex flex-col">
+            <strong className="font-normal">Clickbait</strong>
+            <span className="text-xs text-zinc-400">Veigh</span>
+          </div>
+        </div>
+
+        <div className="flex flex-col items-center">
+          <div className="flex items-center gap-6">
+            <Shuffle size={20} className="text-zinc-200" />
+            <SkipBack size={20} className="text-zinc-200" />
+
+            <button className="w-10 h-10 flex items-center justify-center pl-1 rounded-full bg-white text-black">
+              <Play />
+            </button>
+
+            <SkipForward size={20} className="text-zinc-200" />
+            <Repeat />
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-xs text-zinc-400">0:31</span>
+            <div className="h-1 rounded-full w-96 bg-zinc-600">
+              <div className="bg-zinc-200 w-40 h-1 rounded"></div>
+            </div>
+            <span className="text-xs text-zinc-400">2:14</span>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <Mic2 size={20} className="text-zinc-200" />
+          <LayoutList size={20} className="text-zinc-200" />
+          <Laptop2 size={20} className="text-zinc-200" />
+          <div className="flex items-center gap-4">
+            <Volume size={20} className="text-zinc-200" />
+            <div className="h-1 rounded-full w-24 bg-zinc-600">
+              <div className="bg-zinc-200 w-10 h-1 rounded-full"></div>
+            </div>
+          </div>
+          <Maximize2 size={20} className="text-zinc-200" />
+        </div>
+
+      </footer>
     </div>
   )
 }
